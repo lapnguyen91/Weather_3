@@ -1,10 +1,12 @@
-package com.example.lapnguyen.weather_3;
+package com.example.lapnguyen.weather_3.screen.mainscreen;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.lapnguyen.weather_3.R;
+import com.example.lapnguyen.weather_3.screen.settingscreen.SettingsActivity;
 import com.example.lapnguyen.weather_3.utils.Navigator;
 
 /**

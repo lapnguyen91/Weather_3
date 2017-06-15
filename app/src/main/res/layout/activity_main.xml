@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/image_weather_icon"
         android:layout_centerHorizontal="true"
-        android:hint="@string/detail"
+        android:hint="@string/wind_speed"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/color_black" />
 
