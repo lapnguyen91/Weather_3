@@ -11,41 +11,42 @@ public class Weather {
 
     @SerializedName("latitude")
     @Expose
-    private double latitude;
+
+    private double mLatitude;
     @SerializedName("longitude")
     @Expose
-    private double longitude;
+    private double mLongitude;
     @SerializedName("currently")
     @Expose
-    private Currently currently;
+    private Currently mCurrently;
 
     public Weather(double latitude, double longitude, Currently currently) {
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.currently = currently;
+        this.mLatitude = latitude;
+        this.mLongitude = longitude;
+        this.mCurrently = currently;
     }
 
     public double getLatitude() {
-        return latitude;
+        return mLatitude;
     }
 
     public void setLatitude(double latitude) {
-        this.latitude = latitude;
+        this.mLatitude = latitude;
     }
 
     public double getLongitude() {
-        return longitude;
+        return mLongitude;
     }
 
     public void setLongitude(double longitude) {
-        this.longitude = longitude;
+        this.mLongitude = longitude;
     }
 
     public Currently getCurrently() {
-        return currently;
+        return mCurrently;
     }
 
     public void setCurrently(Currently currently) {
-        this.currently = currently;
+        this.mCurrently = currently;
     }
 }

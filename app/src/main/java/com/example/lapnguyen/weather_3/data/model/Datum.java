@@ -11,101 +11,91 @@ public class Datum {
 
     @SerializedName("time")
     @Expose
-    private int time;
+
+    private int mTime;
     @SerializedName("summary")
     @Expose
-    private String summary;
+    private String mSummary;
     @SerializedName("icon")
     @Expose
-    private String icon;
+    private String mIcon;
     @SerializedName("temperatureMin")
     @Expose
-    private double temperatureMin;
+    private double mTemperatureMin;
     @SerializedName("temperatureMax")
     @Expose
-    private double temperatureMax;
+    private double mTemperatureMax;
     @SerializedName("humidity")
     @Expose
-    private double humidity;
+    private double mHumidity;
     @SerializedName("windSpeed")
     @Expose
-    private double windSpeed;
+    private double mWindSpeed;
     @SerializedName("uvIndex")
     @Expose
-    private int uvIndex;
-    @SerializedName("uvIndexTime")
-    @Expose
-    private int uvIndexTime;
+    private int mUvIndex;
 
     public int getTime() {
-        return time;
+        return mTime;
     }
 
     public void setTime(int time) {
-        this.time = time;
+        this.mTime = time;
     }
 
     public String getSummary() {
-        return summary;
+        return mSummary;
     }
 
     public void setSummary(String summary) {
-        this.summary = summary;
+        this.mSummary = summary;
     }
 
     public String getIcon() {
-        return icon;
+        return mIcon;
     }
 
     public void setIcon(String icon) {
-        this.icon = icon;
+        this.mIcon = icon;
     }
 
     public double getTemperatureMin() {
-        return temperatureMin;
+        return mTemperatureMin;
     }
 
     public void setTemperatureMin(double temperatureMin) {
-        this.temperatureMin = temperatureMin;
+        this.mTemperatureMin = temperatureMin;
     }
 
     public double getTemperatureMax() {
-        return temperatureMax;
+        return mTemperatureMax;
     }
 
     public void setTemperatureMax(double temperatureMax) {
-        this.temperatureMax = temperatureMax;
+        this.mTemperatureMax = temperatureMax;
     }
 
     public double getHumidity() {
-        return humidity;
+        return mHumidity;
     }
 
     public void setHumidity(double humidity) {
-        this.humidity = humidity;
+        this.mHumidity = humidity;
     }
 
     public double getWindSpeed() {
-        return windSpeed;
+        return mWindSpeed;
     }
 
     public void setWindSpeed(double windSpeed) {
-        this.windSpeed = windSpeed;
+        this.mWindSpeed = windSpeed;
     }
 
     public int getUvIndex() {
-        return uvIndex;
+        return mUvIndex;
     }
 
     public void setUvIndex(int uvIndex) {
-        this.uvIndex = uvIndex;
-    }
-
-    public int getUvIndexTime() {
-        return uvIndexTime;
-    }
-
-    public void setUvIndexTime(int uvIndexTime) {
-        this.uvIndexTime = uvIndexTime;
+        this.mUvIndex = uvIndex;
     }
 }

@@ -11,90 +11,90 @@ public class Currently {
 
     @SerializedName("time")
     @Expose
-    private int time;
+    private int mTime;
     @SerializedName("summary")
     @Expose
-    private String summary;
+    private String mSummary;
     @SerializedName("icon")
     @Expose
-    private String icon;
+    private String mIcon;
     @SerializedName("temperature")
     @Expose
-    private double temperature;
+    private double mTemperature;
     @SerializedName("humidity")
     @Expose
-    private double humidity;
+    private double mHumidity;
     @SerializedName("windSpeed")
     @Expose
-    private double windSpeed;
+    private double mWindSpeed;
     @SerializedName("uvIndex")
     @Expose
-    private int uvIndex;
+    private int mUvIndex;
 
     public Currently(int time, String summary, String icon, double temperature, double humidity,
             double windSpeed, int uvIndex) {
-        this.time = time;
-        this.summary = summary;
-        this.icon = icon;
-        this.temperature = temperature;
-        this.humidity = humidity;
-        this.windSpeed = windSpeed;
-        this.uvIndex = uvIndex;
+        this.mTime = time;
+        this.mSummary = summary;
+        this.mIcon = icon;
+        this.mTemperature = temperature;
+        this.mHumidity = humidity;
+        this.mWindSpeed = windSpeed;
+        this.mUvIndex = uvIndex;
     }
 
     public int getTime() {
-        return time;
+        return mTime;
     }
 
     public void setTime(int time) {
-        this.time = time;
+        this.mTime = time;
     }
 
     public String getSummary() {
-        return summary;
+        return mSummary;
     }
 
     public void setSummary(String summary) {
-        this.summary = summary;
+        this.mSummary = summary;
     }
 
     public String getIcon() {
-        return icon;
+        return mIcon;
     }
 
     public void setIcon(String icon) {
-        this.icon = icon;
+        this.mIcon = icon;
     }
 
     public double getTemperature() {
-        return temperature;
+        return mTemperature;
     }
 
     public void setTemperature(double temperature) {
-        this.temperature = temperature;
+        this.mTemperature = temperature;
     }
 
     public double getHumidity() {
-        return humidity;
+        return mHumidity;
     }
 
     public void setHumidity(double humidity) {
-        this.humidity = humidity;
+        this.mHumidity = humidity;
     }
 
     public double getWindSpeed() {
-        return windSpeed;
+        return mWindSpeed;
     }
 
     public void setWindSpeed(double windSpeed) {
-        this.windSpeed = windSpeed;
+        this.mWindSpeed = windSpeed;
     }
 
     public int getUvIndex() {
-        return uvIndex;
+        return mUvIndex;
     }
 
     public void setUvIndex(int uvIndex) {
-        this.uvIndex = uvIndex;
+        this.mUvIndex = uvIndex;
     }
 }
