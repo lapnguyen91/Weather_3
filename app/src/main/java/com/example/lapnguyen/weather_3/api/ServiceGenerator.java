@@ -10,12 +10,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by lapnguyen on 15/06/2017.
  */
 
-final class ServiceGenerator {
+public final class ServiceGenerator {
     private ServiceGenerator() {
     }
 
     private static final String BASE_URL =
-            "https://api.darksky.net/forecast/428f2cb27c18bfb39610879d88d33033/";
+            "https://api.darksky.net/";
 
     private static Retrofit retrofit;
 

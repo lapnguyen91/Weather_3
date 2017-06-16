@@ -1,69 +1,97 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swiperefresh"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/dp_20">
+    >
 
-    <TextView
-        android:id="@+id/text_currentLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:hint="@string/current_location"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/color_black" />
 
-    <TextView
-        android:id="@+id/text_lastUpdate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text_currentLocation"
-        android:layout_centerHorizontal="true"
-        android:hint="@string/last_update_time"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/color_black"
-        android:textSize="@dimen/sp_13" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <TextView
+            android:id="@+id/text_currentLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:hint="@string/current_location"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/color_black"
+            />
 
-    <ImageView
-        android:id="@+id/image_weather_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/color_black"
-        android:textSize="@dimen/sp_90"
-        tools:ignore="ContentDescription" />
+        <TextView
+            android:id="@+id/text_lastUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_currentLocation"
+            android:layout_centerHorizontal="true"
+            android:hint="@string/last_update_time"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/sp_13"
+            />
 
-    <TextView
-        android:id="@+id/text_currentTemperature"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:hint="@string/current_temperature"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/color_black"
-        android:textSize="@dimen/sp_50" />
+        <ImageView
+            android:id="@+id/image_weather_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/sp_90"
+            tools:ignore="ContentDescription"
+            />
 
-    <TextView
-        android:id="@+id/text_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/image_weather_icon"
-        android:layout_centerHorizontal="true"
-        android:hint="@string/wind_speed"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/color_black" />
+        <TextView
+            android:id="@+id/text_currentTemperature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_horizontal"
+            android:hint="@string/current_temperature"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/sp_50"
+            />
 
-    <TextView
-        android:id="@+id/text_humidity_percent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text_detail"
-        android:layout_centerHorizontal="true"
-        android:hint="@string/humidity_percent"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/color_black" />
-</RelativeLayout>
+        <TextView
+            android:id="@+id/text_windSpeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image_weather_icon"
+            android:layout_centerHorizontal="true"
+            android:hint="@string/wind_speed"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/color_black"
+            />
+
+        <TextView
+            android:id="@+id/text_humidity_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_windSpeed"
+            android:layout_centerHorizontal="true"
+            android:hint="@string/humidity_percent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/color_black"
+            />
+
+        <TextView
+            android:id="@+id/text_uv_index"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_humidity_percent"
+            android:layout_centerHorizontal="true"
+            android:hint="@string/uv_index"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/color_black"
+            />
+    </RelativeLayout>
+</android.support.v4.widget.SwipeRefreshLayout>
+
