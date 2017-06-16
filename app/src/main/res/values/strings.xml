@@ -3,11 +3,13 @@
     <string name="current_location">Current location</string>
     <string name="last_update_time">Last updated time</string>
     <string name="current_temperature">Current temperature</string>>
-    <string name="detail">Detail</string>
+    <string name="wind_speed">Wind Speed</string>
     <string name="humidity_percent">Humidity percent</string>
     <string name="temperature_unit">Temperature Unit</string>
     <string name="wind_speed_unit">Wind speed Unit</string>
     <string name="setting">setting</string>
+    <!--<string name="base_url">https://api.darksky.net/forecast</string>-->
+    <!--<string name="secret_key">428f2cb27c18bfb39610879d88d33033</string>-->
     <string-array name="temperature_unit_array">
         <item>Fahrenheit</item>
         <item>Celsius</item>

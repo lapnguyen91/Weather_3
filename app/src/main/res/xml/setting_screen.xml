@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-<PreferenceCategory android:title="Settings">
-    <ListPreference
-        android:key="sync_tempUnit"
-        android:title="@string/temperature_unit"
-        android:dialogTitle="@string/temperature_unit"
-        android:entries="@array/temperature_unit_array"
-        android:entryValues="@array/temperature_unit_array_value"
-        android:defaultValue="@string/temperature_unit_default_value" />
-    <ListPreference
-        android:key="sync_speedUnit"
-        android:title="@string/wind_speed_unit"
-        android:dialogTitle="@string/wind_speed_unit"
-        android:entries="@array/windspeed_unit_array"
-        android:entryValues="@array/windspeed_unit_array_value"
-        android:defaultValue="@string/windspeed_unit_default_value" />
-</PreferenceCategory>
+    <PreferenceCategory android:title="Settings">
+        <ListPreference
+            android:defaultValue="@string/temperature_unit_default_value"
+            android:dialogTitle="@string/temperature_unit"
+            android:entries="@array/temperature_unit_array"
+            android:entryValues="@array/temperature_unit_array_value"
+            android:key="sync_tempUnit"
+            android:title="@string/temperature_unit" />
+        <ListPreference
+            android:defaultValue="@string/windspeed_unit_default_value"
+            android:dialogTitle="@string/wind_speed_unit"
+            android:entries="@array/windspeed_unit_array"
+            android:entryValues="@array/windspeed_unit_array_value"
+            android:key="sync_speedUnit"
+            android:title="@string/wind_speed_unit" />
+    </PreferenceCategory>
 </PreferenceScreen>
