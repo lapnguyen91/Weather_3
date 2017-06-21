@@ -8,6 +8,7 @@
     <string name="uv_index">UV Index : </string>
     <string name="temperature_unit">Temperature Unit</string>
     <string name="wind_speed_unit">Wind speed Unit</string>
+    <string name="datetime_format">dd/MM/yyyy HH:mm:ss</string>
     <string name="setting">setting</string>
         <string-array name="temperature_unit_array">
         <item>Fahrenheit</item>

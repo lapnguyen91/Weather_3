@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     private TextView mCurrentLocation, mCurrentTemperature, mWindSpeed, mHumidityPercent, mUvIndex,
             mLastUpdatedTime;
     private ImageView mWeatherIcon;
-
+    public long milisec = 1000;
+    public double percentage = 100.0;
     Navigator mNavigator;
 
     @Override
@@ -75,13 +76,13 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         mCurrentTemperature = (TextView) findViewById(R.id.text_currentTemperature);
         mWindSpeed = (TextView) findViewById(R.id.text_windSpeed);
         mHumidityPercent = (TextView) findViewById(R.id.text_humidity_percent);
-        mUvIndex = (TextView) findViewById(R.id.text_uvIndex);
+        mUvIndex = (TextView) findViewById(R.id.text_uv_index);
         mWeatherIcon = (ImageView) findViewById(R.id.image_weather_icon);
         mLastUpdatedTime = (TextView) findViewById(R.id.text_lastUpdate);
     }
 
     public String epochConvert(long epoch) {
-        return DateFormat.format("dd/MM/yyyy HH:mm:ss", new Date(epoch * 1000)).toString();
+        return DateFormat.format(this.getString(R.string.datetime_format), new Date(epoch * milisec)).toString();
     }
 
     @Override
@@ -91,7 +92,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
     @SuppressLint("SetTextI18n")
     public void displayData(Weather weather) {
-
         mLastUpdatedTime.setText(this.getString(R.string.last_update_time) + epochConvert(
                 weather.getCurrently().getTime()));
         mUvIndex.setText(this.getString(R.string.uv_index) + weather.getCurrently().getUvIndex());
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         mWindSpeed.setText(
                 this.getString(R.string.wind_speed) + weather.getCurrently().getWindSpeed());
         mHumidityPercent.setText(this.getString(R.string.humidity_percent)
-                + weather.getCurrently().getHumidity() * 100
+                + weather.getCurrently().getHumidity() * percentage
                 + "%");
         Glide.with(this).load(weather.getCurrently().getIcon()).centerCrop().into(mWeatherIcon);
     }

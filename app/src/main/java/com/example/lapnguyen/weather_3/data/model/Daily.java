@@ -1,4 +1,3 @@
-
 package com.example.lapnguyen.weather_3.data.model;
 
 import java.util.List;
@@ -13,36 +12,36 @@ public class Daily {
 
     @SerializedName("summary")
     @Expose
-    private String summary;
+
+    private String mSummary;
     @SerializedName("icon")
     @Expose
-    private String icon;
+    private String mIcon;
     @SerializedName("data")
     @Expose
-    private List<Datum> data = null;
+    private List<Datum> mData = null;
 
     public String getSummary() {
-        return summary;
+        return mSummary;
     }
 
     public void setSummary(String summary) {
-        this.summary = summary;
+        this.mSummary = summary;
     }
 
     public String getIcon() {
-        return icon;
+        return mIcon;
     }
 
     public void setIcon(String icon) {
-        this.icon = icon;
+        this.mIcon = icon;
     }
 
     public List<Datum> getData() {
-        return data;
+        return mData;
     }
 
     public void setData(List<Datum> data) {
-        this.data = data;
+        this.mData = data;
     }
-
 }

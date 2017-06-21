@@ -1,7 +1,6 @@
 package com.example.lapnguyen.weather_3.data.source;
 
 import com.example.lapnguyen.weather_3.api.WeatherService;
-
 import com.example.lapnguyen.weather_3.data.model.Weather;
 import io.reactivex.Observable;
 
@@ -25,8 +24,6 @@ public class MainRepositoryImplement implements MainRepository {
 
     @Override
     public Observable<Weather> getWeather(double latitude, double longitude) {
-
         return mWeatherService.getWeather(latitude, longitude);
     }
 }
-
