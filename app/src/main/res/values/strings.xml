@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Weather_3</string>
+    <string name="current_location">Current location : </string>
+    <string name="last_update_time">Last updated time : </string>
+    <string name="current_temperature">Current temperature : </string>>
+    <string name="wind_speed">Wind Speed : </string>
+    <string name="humidity_percent">Humidity percent : </string>
+    <string name="uv_index">UV Index : </string>
+    <string name="temperature_unit">Temperature Unit</string>
+    <string name="wind_speed_unit">Wind speed Unit</string>
+    <string name="setting">setting</string>
+        <string-array name="temperature_unit_array">
+        <item>Fahrenheit</item>
+        <item>Celsius</item>
+    </string-array>
+    <string-array name="temperature_unit_array_value">
+        <item>F</item>
+        <item>C</item>
+    </string-array>
+    <string name="temperature_unit_default_value">C</string>
+
+    <string-array name="windspeed_unit_array">
+        <item>Mph(Miles per hour)</item>
+        <item>Km/h(Kilometers per hour)</item>
+        <item>M/s(Meter per second)</item>
+    </string-array>
+    <string-array name="windspeed_unit_array_value">
+        <item>mph</item>
+        <item>kmh</item>
+        <item>ms</item>
+    </string-array>
+    <string name="windspeed_unit_default_value">kmh</string>
+</resources>
