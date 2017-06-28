@@ -1,5 +1,6 @@
 package com.example.lapnguyen.weather_3.screen.mainscreen;
 
+import com.example.lapnguyen.weather_3.data.model.CurrentLocation;
 import com.example.lapnguyen.weather_3.data.model.Weather;
 
 /**
@@ -11,7 +12,7 @@ public class MainContract {
      * View
      */
     public interface View {
-        void loadWeatherDetailSuccess(Weather weather);
+        void loadWeatherDetailSuccess(Weather weather, CurrentLocation currentLocation);
     }
 
     /**
@@ -20,5 +21,11 @@ public class MainContract {
 
     public interface Presenter {
         void loadWeatherDetail(double latitude, double longitude);
+
+        void startGoogleApi();
+
+        void updateScreen();
+
+        void stopGoogleApi();
     }
 }

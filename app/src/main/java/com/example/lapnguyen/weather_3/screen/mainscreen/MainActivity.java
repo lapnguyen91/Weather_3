@@ -11,8 +11,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.lapnguyen.weather_3.R;
+import com.example.lapnguyen.weather_3.api.LocationService;
 import com.example.lapnguyen.weather_3.api.ServiceGenerator;
 import com.example.lapnguyen.weather_3.api.WeatherService;
+import com.example.lapnguyen.weather_3.data.model.CurrentLocation;
 import com.example.lapnguyen.weather_3.data.model.Weather;
 import com.example.lapnguyen.weather_3.data.source.MainRepository;
 import com.example.lapnguyen.weather_3.data.source.MainRepositoryImplement;
@@ -31,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
             mLastUpdatedTime;
     private ImageView mWeatherIcon;
     public long milisec = 1000;
-    public double percentage = 100.0;
+    private double percentage = 100;
     Navigator mNavigator;
 
     @Override
@@ -40,13 +42,16 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         setContentView(R.layout.activity_main);
         initWidget();
         mNavigator = new Navigator(this);
-        MainRepository mainRepository =
-                new MainRepositoryImplement(ServiceGenerator.createService(WeatherService.class));
-        mPresenter = new MainPresenter(this, mainRepository);
+        MainRepository mainRepository = MainRepositoryImplement.getInstance(
+                ServiceGenerator.createService(WeatherService.class),
+                ServiceGenerator.createService(LocationService.class));
+        mPresenter = new MainPresenter(getApplicationContext(), this, mainRepository);
         mSwipeView.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                mPresenter.loadWeatherDetail(65.9667, 18.5333);
+                //mPresenter.loadWeatherDetail(mCurrentLocation.getLatitude(), mCurrentLocation
+                // .getLongitude());
+                mPresenter.updateScreen();
                 mSwipeView.setRefreshing(false);
             }
         });
@@ -82,16 +87,17 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     }
 
     public String epochConvert(long epoch) {
-        return DateFormat.format(this.getString(R.string.datetime_format), new Date(epoch * milisec)).toString();
+        return DateFormat.format(this.getString(R.string.datetime_format),
+                new Date(epoch * milisec)).toString();
     }
 
     @Override
-    public void loadWeatherDetailSuccess(Weather weather) {
-        displayData(weather);
+    public void loadWeatherDetailSuccess(Weather weather, CurrentLocation currentLocation) {
+        displayData(weather, currentLocation);
     }
 
     @SuppressLint("SetTextI18n")
-    public void displayData(Weather weather) {
+    public void displayData(Weather weather, CurrentLocation currentLocation) {
         mLastUpdatedTime.setText(this.getString(R.string.last_update_time) + epochConvert(
                 weather.getCurrently().getTime()));
         mUvIndex.setText(this.getString(R.string.uv_index) + weather.getCurrently().getUvIndex());
@@ -101,6 +107,21 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         mHumidityPercent.setText(this.getString(R.string.humidity_percent)
                 + weather.getCurrently().getHumidity() * percentage
                 + "%");
+        mCurrentLocation.setText(
+                currentLocation.getAddress().getCounty() + "," + currentLocation.getAddress()
+                        .getState());
         Glide.with(this).load(weather.getCurrently().getIcon()).centerCrop().into(mWeatherIcon);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mPresenter.startGoogleApi();
+    }
+
+    @Override
+    protected void onStop() {
+        mPresenter.stopGoogleApi();
+        super.onStop();
     }
 }
