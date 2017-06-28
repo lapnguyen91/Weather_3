@@ -1,5 +1,6 @@
 package com.example.lapnguyen.weather_3.data.source;
 
+import com.example.lapnguyen.weather_3.data.model.CurrentLocation;
 import com.example.lapnguyen.weather_3.data.model.Weather;
 import io.reactivex.Observable;
 
@@ -8,6 +9,8 @@ import io.reactivex.Observable;
  */
 
 public interface MainRepository {
-    Observable<Weather> getWeather(double latitude , double longitude);
+    Observable<Weather> getWeather(double latitude, double longitude);
+
+    Observable<CurrentLocation> getLocationName(double latitude, double longitude);
 }
 

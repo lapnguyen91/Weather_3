@@ -1,6 +1,8 @@
 package com.example.lapnguyen.weather_3.data.source;
 
+import com.example.lapnguyen.weather_3.api.LocationService;
 import com.example.lapnguyen.weather_3.api.WeatherService;
+import com.example.lapnguyen.weather_3.data.model.CurrentLocation;
 import com.example.lapnguyen.weather_3.data.model.Weather;
 import io.reactivex.Observable;
 
@@ -9,15 +11,19 @@ import io.reactivex.Observable;
  */
 public class MainRepositoryImplement implements MainRepository {
     WeatherService mWeatherService;
+    LocationService mLocationService;
     private static MainRepository instance;
 
-    public MainRepositoryImplement(WeatherService weatherService) {
+    private MainRepositoryImplement(WeatherService weatherService,
+            LocationService locationService) {
         mWeatherService = weatherService;
+        mLocationService = locationService;
     }
 
-    public static MainRepository getInstance(WeatherService weatherService) {
+    public static MainRepository getInstance(WeatherService weatherService,
+            LocationService locationService) {
         if (instance == null) {
-            instance = new MainRepositoryImplement(weatherService);
+            instance = new MainRepositoryImplement(weatherService, locationService);
         }
         return instance;
     }
@@ -25,5 +31,9 @@ public class MainRepositoryImplement implements MainRepository {
     @Override
     public Observable<Weather> getWeather(double latitude, double longitude) {
         return mWeatherService.getWeather(latitude, longitude);
+    }
+
+    public Observable<CurrentLocation> getLocationName(double latitude, double longitude) {
+        return mLocationService.getLocationName(latitude, longitude);
     }
 }
